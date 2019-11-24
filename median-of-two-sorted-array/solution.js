@@ -1,17 +1,14 @@
-var findMedianSortedArrays = function(nums1, nums2) {
-    let A = nums1
-    let B = nums2
-    let m = nums1.length
-    let n = nums2.length
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays = function(A, B) {
+    let m = A.length
+    let n = B.length
 
-    if (m > n) { // swap
-        const temp = A
-        A = B
-        B = temp
-        
-        const tmp = m;
-        m = n;
-        n = tmp;
+    if (m > n) {
+        return findMedianSortedArrays(B, A)
     }
 
     let iMin = 0
